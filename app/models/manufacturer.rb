@@ -3,6 +3,6 @@ class Manufacturer < ActiveRecord::Base
   has_many :products
 
   def full_name
-    name << "full name"
+    name << " full name"
   end
 end

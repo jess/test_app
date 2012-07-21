@@ -13,7 +13,7 @@
 <% @cart.items.each do |item| %>
     <tr>
       <td><%= item.name %></td>
-      <td><%= cart_price(item) %></td>
+      <td><%= cart_price(item, "full_name") %></td>
       <td><%= item.manufacturer.name %></td>
       <td><%= link_to "Remove Item", cart_path(item), :method => :delete %></td>
     </tr>
