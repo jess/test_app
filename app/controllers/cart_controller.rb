@@ -1,5 +1,5 @@
 class CartController < ApplicationController
-  def show
+  def index
     @cart = session[:cart] ||= Cart.new
   end
 
@@ -7,6 +7,13 @@ class CartController < ApplicationController
     product = Product.find(params[:id])
     @cart = session[:cart] ||= Cart.new
     @cart.add product
-    redirect_to cart_path, :notice => "Product Added"
+    redirect_to cart_index_path, :notice => "Product Added"
+  end
+
+  def destroy
+    product = Product.find(params[:id])
+    @cart = session[:cart] ||= Cart.new
+    @cart.remove product
+    redirect_to cart_index_path, :notice => "Product Removed"
   end
 end

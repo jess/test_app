@@ -8,4 +8,8 @@ class Cart
   def add(product)
     @items << product
   end
+
+  def remove(product)
+    @items.delete(product)
+  end
 end
