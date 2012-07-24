@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(:version => 20120721125503) do
 
   create_table "products", :force => true do |t|
     t.string   "name"
+    t.string   "image"
     t.integer  "manufacturer_id"
     t.integer  "price"
     t.datetime "created_at",      :null => false
